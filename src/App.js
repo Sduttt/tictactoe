@@ -95,16 +95,11 @@ const App = () => {
       <Row>
         <Col md={6} className="offset-md-3">
           {winMsg ? (
-            <div className="mb-2 mt-2">
-              <h1 className="text-danger text-uppercase text-center animate__animated animate__flip">
-                {winMsg}
-              </h1>
-              <Button color="danger" block onClick={reloadGame}>
-                RELOAD
-              </Button>
-            </div>
+            <h1 className="text-center height text-danger animate__animated animate__flipInX">
+              Game Over!
+            </h1>
           ) : (
-            <h1 className="text-center text-warning animate__animated animate__flipInX">
+            <h1 className="text-center height text-warning animate__animated animate__flipInX">
               {isCrossed ? "Cross" : "Circle"}'s turn
             </h1>
           )}
@@ -119,6 +114,18 @@ const App = () => {
                 </CardBody>
               </Card>
             ))}
+          </div>
+          <div className="">
+            {winMsg ? (
+              <div className="mt-4 height">
+                 <h1 className="text-danger text-uppercase text-center animate__animated animate__flip">
+                   {winMsg}
+                 </h1>
+                 <Button color="danger" block onClick={reloadGame}>
+                   RELOAD
+                 </Button>
+               </div>
+            ): ""}
           </div>
         </Col>
       </Row>
